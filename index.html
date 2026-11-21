@@ -497,6 +497,7 @@ footer.gutter { padding-block: 8px 40px; display: flex; justify-content: space-b
 </footer>
 
 <script>
+(() => {
   // theme toggle
   const root = document.documentElement;
   document.getElementById('theme-toggle').addEventListener('click', () => {
@@ -507,8 +508,8 @@ footer.gutter { padding-block: 8px 40px; display: flex; justify-content: space-b
   });
 
   // header border on scroll
-  const top = document.getElementById('top');
-  const onScroll = () => top.classList.toggle('scrolled', scrollY > 8);
+  const header = document.getElementById('top');
+  const onScroll = () => header.classList.toggle('scrolled', scrollY > 8);
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   // highlight the section in view
@@ -531,6 +532,7 @@ footer.gutter { padding-block: 8px 40px; display: flex; justify-content: space-b
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
+})();
 </script>
 </body>
 </html>
